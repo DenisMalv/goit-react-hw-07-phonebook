@@ -1,3 +1,5 @@
+
+
 .contactForm {
   display: flex;
   flex-wrap: wrap;
@@ -11,16 +13,13 @@
   gap: 10px;
 }
 
+
 .contactForm__label {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.contactForm__text {
-}
-.contactForm__input {
-}
 
 .contactForm__button {
   margin-left: auto;

@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import css from './contactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, getContacts } from 'redux/contactsSlice/contactsSlice';
+import { getContacts } from 'redux/contactsSlice/contactsSlice';
+
+import { fetchAddContactThunk } from 'redux/contactsOperations/contactsOperations';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
-  console.log(contacts);
+
   const handleImputChange = event => {
     const { name, value } = event.currentTarget;
     // eslint-disable-next-line default-case
@@ -28,10 +30,14 @@ const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    const contact = {
+      name,
+      number,
+    };
     const newContact = checkingAddedContact(name);
     newContact
       ? alert(`${newContact.name} is already in contacts`)
-      : dispatch(addContact({ name, number }));
+      : dispatch(fetchAddContactThunk(contact));
     reset();
   };
 

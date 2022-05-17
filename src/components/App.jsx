@@ -1,8 +1,4 @@
-// Создай хранилище с configureStore()
-// Создай действия сохранения и удаления контакта, а также обновления фильтра. Используй функцию createAction().
-// Создай редюсеры контактов и фильтра. Используй функцию createReducer() или createSlice().
-// Свяжи React-компоненты с Redux-логикой при помощи хуков бибилиотеки react-redux.
-
+import React from 'react';
 import Filter from './Filter/Filter';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
